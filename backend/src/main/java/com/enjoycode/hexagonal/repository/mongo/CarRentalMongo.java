@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class CarRentalMongo {
 
-   private Long id;
+   private String _id;
 
    private Integer fleetQty;
 
@@ -14,16 +14,16 @@ public class CarRentalMongo {
 
    private Integer sales;
 
-   public CarRentalMongo(Long id, Integer fleetQty, BigDecimal rentedCarsQty, String address, Integer sales) {
-      this.id = id;
+   public CarRentalMongo(String _id, Integer fleetQty, BigDecimal rentedCarsQty, String address, Integer sales) {
+      this._id = _id;
       this.fleetQty = fleetQty;
       this.rentedCarsQty = rentedCarsQty;
       this.address = address;
       this.sales = sales;
    }
 
-   public Long getId() {
-      return id;
+   public String getId() {
+      return _id;
    }
 
    public Integer getFleetQty() {
