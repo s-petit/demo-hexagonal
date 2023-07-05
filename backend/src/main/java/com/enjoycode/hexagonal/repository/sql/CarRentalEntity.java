@@ -29,6 +29,11 @@ public class CarRentalEntity {
       this.rentedCarsQty = rentedCarsQty;
    }
 
+   public CarRentalEntity(Integer id, String address) {
+      this.id = id;
+      this.address = address;
+   }
+
    public Integer getId() {
       return id;
    }
@@ -41,4 +46,7 @@ public class CarRentalEntity {
       return rentedCarsQty;
    }
 
+   public String getAddress() {
+      return address;
+   }
 }

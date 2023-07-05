@@ -5,29 +5,35 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.enjoycode.hexagonal.repository.sql.CarRentalEntity;
-import com.enjoycode.hexagonal.repository.sql.CarRentalSqlRepository;
-import com.enjoycode.hexagonal.service.CalculateStock;
+import com.enjoycode.hexagonal.service.CarRentalService;
 
 @RestController
 public class CarRentalController {
 
-   private final CalculateStock calculateStock;
+   private final CarRentalService carRentalService;
 
-   public CarRentalController(CalculateStock calculateStock) {
-      this.calculateStock = calculateStock;
+   public CarRentalController(CarRentalService carRentalService) {
+      this.carRentalService = carRentalService;
    }
 
    @GetMapping("/car-rental/{id}/stock")
    public ResponseEntity<Integer> getStock(@PathVariable("id") Integer id) {
-      Integer stock = calculateStock.remainingCars(id);
+      Integer stock = carRentalService.remainingCars(id);
 
       return ResponseEntity.ok(stock);
+   }
+
+   @GetMapping("/car-rental/{id}/address")
+   public ResponseEntity<String> getAddress(@PathVariable("id") Integer id) {
+      String address = carRentalService.getAddress(id);
+
+      return ResponseEntity.ok(address);
    }
 
    // Le controller accède directement au code infrastructure
    @GetMapping("/car-rental/{id}")
    public ResponseEntity<CarRentalEntity> findById(@PathVariable("id") Integer id) {
-      CarRentalEntity carRental = calculateStock.findById(id);
+      CarRentalEntity carRental = carRentalService.findById(id);
       return ResponseEntity.ok(carRental);
    }
 }
