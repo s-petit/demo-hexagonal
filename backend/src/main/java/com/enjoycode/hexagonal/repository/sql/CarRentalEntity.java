@@ -3,6 +3,7 @@ package com.enjoycode.hexagonal.repository.sql;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+import java.math.BigDecimal;
 import com.enjoycode.hexagonal.service.CarRentalStock;
 
 @Entity
@@ -12,16 +13,17 @@ public class CarRentalEntity {
 
    private Integer fleetQty;
 
-   private Integer rentedCarsQty;
+   private BigDecimal rentedCarsQty;
 
    private String address;
 
    private Integer sales;
 
+
    public CarRentalEntity() {
    }
 
-   public CarRentalEntity(Integer id, Integer fleetQty, Integer rentedCarsQty) {
+   public CarRentalEntity(Integer id, Integer fleetQty, BigDecimal rentedCarsQty) {
       this.id = id;
       this.fleetQty = fleetQty;
       this.rentedCarsQty = rentedCarsQty;
@@ -35,7 +37,7 @@ public class CarRentalEntity {
       return fleetQty;
    }
 
-   public Integer getRentedCarsQty() {
+   public BigDecimal getRentedCarsQty() {
       return rentedCarsQty;
    }
 

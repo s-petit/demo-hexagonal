@@ -21,6 +21,10 @@ public class CalculateStock {
 
    public Integer remainingCars(int id) {
       CarRentalEntity carRentalEntity = carRentalSqlRepository.findById(id);
-      return carRentalEntity.getFleetQty() - carRentalEntity.getRentedCarsQty();
+      return carRentalEntity.getFleetQty() - carRentalEntity.getRentedCarsQty().intValue();
+   }
+
+   public CarRentalEntity findById(int id) {
+      return carRentalSqlRepository.findById(id);
    }
 }
