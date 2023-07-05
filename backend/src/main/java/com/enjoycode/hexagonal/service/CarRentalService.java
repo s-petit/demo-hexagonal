@@ -25,4 +25,9 @@ public class CarRentalService {
    public CarRentalEntity findById(int id) {
       return carRentalSqlRepository.findById(id);
    }
+
+
+   // 1. changement de base de données
+   // 2. changement de structure / type dans la base
+   // 3. disponibilité et propagation des objets dans toutes les couches (modifier l'infra = impacts sur le domaine, impact sur la reponse JSON, etc.)
 }
