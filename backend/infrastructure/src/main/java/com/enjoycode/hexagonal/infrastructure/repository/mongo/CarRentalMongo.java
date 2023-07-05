@@ -6,7 +6,7 @@ import com.enjoycode.hexagonal.domain.carrental.CarRentalStock;
 
 public class CarRentalMongo {
 
-   private Long id;
+   private String _id;
 
    private Integer fleetQty;
 
@@ -16,16 +16,16 @@ public class CarRentalMongo {
 
    private Integer sales;
 
-   public CarRentalMongo(Long id, Integer fleetQty, BigDecimal rentedCarsQty, String address, Integer sales) {
-      this.id = id;
+   public CarRentalMongo(String _id, Integer fleetQty, BigDecimal rentedCarsQty, String address, Integer sales) {
+      this._id = _id;
       this.fleetQty = fleetQty;
       this.rentedCarsQty = rentedCarsQty;
       this.address = address;
       this.sales = sales;
    }
 
-   public Long getId() {
-      return id;
+   public String getId() {
+      return _id;
    }
 
    public Integer getFleetQty() {
@@ -46,7 +46,7 @@ public class CarRentalMongo {
 
    public CarRentalStock toDomain() {
       return new CarRentalStock(
-            id.intValue(),
+            Integer.parseInt(_id),
             fleetQty,
             rentedCarsQty.intValue()
       );
@@ -54,7 +54,7 @@ public class CarRentalMongo {
 
    public CarRentalDetails toDetails() {
       return new CarRentalDetails(
-            id.intValue(),
+            Integer.parseInt(_id),
             address
       );
    }

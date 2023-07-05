@@ -22,7 +22,7 @@ public class CarRentalMongoAdapter implements CarRentalPort {
    }
 
    private CarRentalMongo byId(Long idLong) {
-      return new CarRentalMongo(idLong,
+      return new CarRentalMongo(String.valueOf(idLong),
             25,
             new BigDecimal("4"),
             "rue de la paix",
