@@ -5,6 +5,6 @@ import java.math.BigDecimal;
 public class CarRentalSqlRepository {
 
    public CarRentalEntity findById(Integer id) {
-      return new CarRentalEntity(id, 25, new BigDecimal(4));
+      return new CarRentalEntity(id, 25, 4);
    }
 }

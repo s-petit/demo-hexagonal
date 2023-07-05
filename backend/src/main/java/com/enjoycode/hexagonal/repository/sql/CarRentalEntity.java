@@ -13,7 +13,7 @@ public class CarRentalEntity {
 
    private Integer fleetQty;
 
-   private BigDecimal rentedCarsQty;
+   private Integer rentedCarsQty;
 
    private String address;
 
@@ -23,7 +23,7 @@ public class CarRentalEntity {
    public CarRentalEntity() {
    }
 
-   public CarRentalEntity(Integer id, Integer fleetQty, BigDecimal rentedCarsQty) {
+   public CarRentalEntity(Integer id, Integer fleetQty, Integer rentedCarsQty) {
       this.id = id;
       this.fleetQty = fleetQty;
       this.rentedCarsQty = rentedCarsQty;
@@ -37,7 +37,7 @@ public class CarRentalEntity {
       return fleetQty;
    }
 
-   public BigDecimal getRentedCarsQty() {
+   public Integer getRentedCarsQty() {
       return rentedCarsQty;
    }
 
