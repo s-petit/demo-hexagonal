@@ -22,12 +22,6 @@ public class CarRentalService {
       return carRentalEntity.getFleetQty() - carRentalEntity.getRentedCarsQty();
    }
 
-
-   public String getAddress(int id) {
-      CarRentalEntity carRentalEntity = carRentalSqlRepository.findById(id);
-      return carRentalEntity.getId() + " - " + carRentalEntity.getAddress();
-   }
-
    public CarRentalEntity findById(int id) {
       return carRentalSqlRepository.findById(id);
    }

@@ -23,13 +23,6 @@ public class CarRentalController {
       return ResponseEntity.ok(stock);
    }
 
-   @GetMapping("/car-rental/{id}/address")
-   public ResponseEntity<String> getAddress(@PathVariable("id") Integer id) {
-      String address = carRentalService.getAddress(id);
-
-      return ResponseEntity.ok(address);
-   }
-
    // Le controller accède directement au code infrastructure
    @GetMapping("/car-rental/{id}")
    public ResponseEntity<CarRentalEntity> findById(@PathVariable("id") Integer id) {
