@@ -1,0 +1,16 @@
+[versions]
+google-java-format = "1.17.0"
+gradle-java-plugin = "3.0.0"
+spring-boot = "3.1.0"
+
+[libraries]
+hibernate = { module = "org.hibernate:hibernate-core", version = "6.2.3.Final" }
+spring-orm = { module = "org.springframework:spring-orm", version = "6.0.9" }
+plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version = "6.19.0" }
+plugin-enjoycode-java = { module = "com.enjoycode.gradle-java-plugin:com.enjoycode.gradle-java-plugin.gradle.plugin", version.ref = "gradle-java-plugin" }
+google-java-format = { module = "com.google.googlejavaformat:google-java-format", version.ref = "google-java-format" }
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "spring-boot" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
+
+[bundles]
+sqlserver = ["hibernate", "spring-orm"]
