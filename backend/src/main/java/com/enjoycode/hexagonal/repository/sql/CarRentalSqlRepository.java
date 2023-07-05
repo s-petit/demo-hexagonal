@@ -1,6 +1,6 @@
-package com.enjoycode.hexagonal.repository;
+package com.enjoycode.hexagonal.repository.sql;
 
-public class CarRentalSqlAdapter {
+public class CarRentalSqlRepository {
 
    public CarRentalEntity findById(Integer id) {
       return new CarRentalEntity(id, 25, 4);

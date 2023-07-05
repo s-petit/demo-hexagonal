@@ -1,4 +1,4 @@
-package com.enjoycode.hexagonal.repository;
+package com.enjoycode.hexagonal.repository.sql;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
