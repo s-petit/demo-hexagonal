@@ -1,6 +1,7 @@
 package com.enjoycode.hexagonal.infrastructure.repository.mongo;
 
 import java.math.BigDecimal;
+import com.enjoycode.hexagonal.domain.carrental.CarRentalDetails;
 import com.enjoycode.hexagonal.domain.carrental.CarRentalStock;
 
 public class CarRentalMongo {
@@ -48,6 +49,13 @@ public class CarRentalMongo {
             id.intValue(),
             fleetQty,
             rentedCarsQty.intValue()
+      );
+   }
+
+   public CarRentalDetails toDetails() {
+      return new CarRentalDetails(
+            id.intValue(),
+            address
       );
    }
 }

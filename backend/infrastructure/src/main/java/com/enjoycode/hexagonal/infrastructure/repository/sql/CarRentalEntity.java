@@ -3,6 +3,7 @@ package com.enjoycode.hexagonal.infrastructure.repository.sql;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+import com.enjoycode.hexagonal.domain.carrental.CarRentalDetails;
 import com.enjoycode.hexagonal.domain.carrental.CarRentalStock;
 
 @Entity
@@ -27,6 +28,11 @@ public class CarRentalEntity {
       this.rentedCarsQty = rentedCarsQty;
    }
 
+   public CarRentalEntity(Integer id, String address) {
+      this.id = id;
+      this.address = address;
+   }
+
    public Integer getId() {
       return id;
    }
@@ -45,6 +51,13 @@ public class CarRentalEntity {
             id,
             fleetQty,
             rentedCarsQty
+      );
+   }
+
+   public CarRentalDetails toDetails() {
+      return new CarRentalDetails(
+            id,
+            address
       );
    }
 }

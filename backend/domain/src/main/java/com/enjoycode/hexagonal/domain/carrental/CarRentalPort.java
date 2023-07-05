@@ -4,4 +4,5 @@ public interface CarRentalPort {
 
    CarRentalStock findById(Integer id);
 
+   CarRentalDetails findDetailsById(Integer id);
 }
