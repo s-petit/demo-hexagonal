@@ -1,9 +1,9 @@
-package com.enjoycode.hexagonal.infrastructure.sql;
+package com.enjoycode.hexagonal.repository;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-import com.enjoycode.hexagonal.domain.carrental.CarRentalStock;
+import com.enjoycode.hexagonal.service.CarRentalStock;
 
 @Entity
 public class CarRentalEntity {
@@ -39,12 +39,4 @@ public class CarRentalEntity {
       return rentedCarsQty;
    }
 
-
-   public CarRentalStock toDomain() {
-      return new CarRentalStock(
-            id,
-            fleetQty,
-            rentedCarsQty
-      );
-   }
 }
