@@ -1,8 +1,8 @@
-package com.enjoycode.hexagonal.infrastructure.sql.repository;
+package com.enjoycode.hexagonal.infrastructure.repository.sql;
 
+import java.math.BigDecimal;
 import com.enjoycode.hexagonal.domain.carrental.CarRentalPort;
 import com.enjoycode.hexagonal.domain.carrental.CarRentalStock;
-import com.enjoycode.hexagonal.infrastructure.sql.CarRentalEntity;
 
 public class CarRentalSqlAdapter implements CarRentalPort {
 

@@ -5,14 +5,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.enjoycode.hexagonal.domain.carrental.CalculateStock;
+import com.enjoycode.hexagonal.infrastructure.repository.mongo.CarRentalMongoAdapter;
+import com.enjoycode.hexagonal.infrastructure.repository.sql.CarRentalSqlAdapter;
 
 @RestController
 public class CarRentalController {
 
    private final CalculateStock calculateStock;
 
-   public CarRentalController(CalculateStock calculateStock) {
-      this.calculateStock = calculateStock;
+   public CarRentalController() {
+      this.calculateStock = new CalculateStock(new CarRentalSqlAdapter());
    }
 
    @GetMapping("/car-rental/{id}/stock")
